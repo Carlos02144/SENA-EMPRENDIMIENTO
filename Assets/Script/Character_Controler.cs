@@ -10,7 +10,7 @@ public class Character_Controler : MonoBehaviour
     public float x, y;
 
     //Correr
-    public int velCorrer;
+    public float velCorrer = 40;
 
     public bool estoyAgachado;
 
@@ -31,6 +31,7 @@ public class Character_Controler : MonoBehaviour
 
         velocidadInicial = VelocidadMovimiento;
         velocidadAgachado = VelocidadMovimiento * 0.5f;
+        velCorrer = 10f;
 
     }
 
@@ -53,7 +54,7 @@ public class Character_Controler : MonoBehaviour
         //Correr
         if (Input.GetKey(KeyCode.LeftShift)&& !estoyAgachado &&PuedoSaltar)
         {
-            VelocidadMovimiento = velCorrer;
+            
             if (y > 0)
             {
                 anim.SetBool("Correr", true);
@@ -61,7 +62,8 @@ public class Character_Controler : MonoBehaviour
             else
             {
                 anim.SetBool("Correr", false);
-            }   
+            }
+            velocidadInicial = velCorrer;
         }
         else
         {
@@ -107,7 +109,7 @@ public class Character_Controler : MonoBehaviour
         {
             EstoyCayendo();
         }
-
+        velocidadInicial = 2;
     }
     public void EstoyCayendo()
         {
