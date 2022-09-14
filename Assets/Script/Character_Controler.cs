@@ -31,7 +31,7 @@ public class Character_Controler : MonoBehaviour
 
         velocidadInicial = VelocidadMovimiento;
         velocidadAgachado = VelocidadMovimiento * 0.5f;
-        velCorrer = 10f;
+        velCorrer = 8f;
 
     }
 

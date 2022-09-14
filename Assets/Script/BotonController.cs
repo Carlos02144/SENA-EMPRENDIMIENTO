@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BotonController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static BotonController Instance { get; private set; }
+    public bool collision;
+   
+    void Awake()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter(Collider collider)
     {
-        
+        if(collider.tag == "Player")
+        {
+            collision = true;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+            collision = false;
     }
 }
