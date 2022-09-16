@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     void HandleCollsion()
     {
         if (BotonController.Instance.collision)
-        {
+        { 
+            if(Input.GetKeyDown("e"))
+            {
+                PuertaController.Instance.StartAnimation();
+            }
             print("Collision");
         }
     }
