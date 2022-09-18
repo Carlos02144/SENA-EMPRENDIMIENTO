@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public float currentTime;
+    bool open =false;
     void Start()
     {
         
@@ -15,6 +17,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         HandleCollsion();
+        GameState();
+    }
+    void GameState()
+    {
+        if (open)
+        {
+            currentTime += Time.deltaTime;
+            if(currentTime >2)
+            {
+                PuertaController.Instance.setAnimation("Close");
+                currentTime = 0;
+                open = false;
+            }
+        }
     }
     void HandleCollsion()
     {
@@ -22,7 +38,8 @@ public class GameManager : MonoBehaviour
         { 
             if(Input.GetKeyDown("e"))
             {
-                PuertaController.Instance.StartAnimation();
+                PuertaController.Instance.setAnimation("Open");
+                open = true;
             }
             print("Collision");
         }

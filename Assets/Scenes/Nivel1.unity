@@ -513,7 +513,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932663319
 GameObject:
@@ -853,7 +853,7 @@ Transform:
   m_Children:
   - {fileID: 1441594333}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2067562995 stripped
 MeshRenderer:
@@ -889,6 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7da61a7d0fed3b43af34516e325fdea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
 --- !u!4 &2093573472
 Transform:
   m_ObjectHideFlags: 0
@@ -921,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2256220605170503252, guid: 59aac6722715b2d498698db6bdb08ab9, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2256220605170503252, guid: 59aac6722715b2d498698db6bdb08ab9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -974,7 +975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2401960993605433672, guid: 62070189de16c3043abd72221d63bab7, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2401960993605433672, guid: 62070189de16c3043abd72221d63bab7, type: 3}
       propertyPath: m_LocalPosition.x
