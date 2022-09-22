@@ -22,7 +22,6 @@ public class Character_Controler : MonoBehaviour
     public float velocidadAgachado;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -99,17 +98,17 @@ public class Character_Controler : MonoBehaviour
                 anim.SetBool("Agachado", false);
                 VelocidadMovimiento = velocidadInicial;
             }
-            anim.SetBool("TocoSuelo", true);
-            
-            
+            anim.SetBool("TocoSuelo", true);    
         }
- 
+       
 
         else
         {
             EstoyCayendo();
         }
         velocidadInicial = 2;
+
+        
     }
     public void EstoyCayendo()
         {
