@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
     void HandleCollsion()
     {
+        //Colision contra un boton
         if (BotonController.Instance.collision)
         { 
             if(Input.GetKeyDown("e"))
@@ -41,7 +42,6 @@ public class GameManager : MonoBehaviour
                 PuertaController.Instance.setAnimation("Open");
                 open = true;
             }
-            print("Collision");
         }
     }
 }
