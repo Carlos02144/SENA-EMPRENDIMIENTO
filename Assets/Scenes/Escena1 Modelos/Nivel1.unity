@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 168101079}
   - component: {fileID: 168101078}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AreaDeRecogida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,11 +303,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 168101076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c37dddcd6f56be4cbbdc3a94730dbff, type: 3}
+  m_Script: {fileID: 11500000, guid: d624893f609e33a499ed05198e9eaf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubo: {fileID: 1147216052}
-  mano: {fileID: 599132533}
+  collision: 0
+  objectToMove: {fileID: 1147216052}
+  tranformMano: {fileID: 599132533}
 --- !u!65 &168101079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1960,7 +1961,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f083b9b20d4681e46975df9135c41d85, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 36e62a193eb44824ebff2d448b9b38e6, type: 2}
+      objectReference: {fileID: 2100000, guid: cd4be4c6d0b0f444c998b3b770eca3f1, type: 2}
     - target: {fileID: 919132149155446097, guid: f083b9b20d4681e46975df9135c41d85, type: 3}
       propertyPath: m_Name
       value: habitacion01
