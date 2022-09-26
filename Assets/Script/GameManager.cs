@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         if (open)
         {
             currentTime += Time.deltaTime;
-            if(currentTime >2)
+            if(currentTime >6)
             {
                 PuertaController.Instance.setAnimation("Close");
                 currentTime = 0;
