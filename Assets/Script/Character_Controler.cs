@@ -10,7 +10,7 @@ public class Character_Controler : MonoBehaviour
     public float x, y;
 
     //Correr
-    public float velCorrer = 40;
+    public float velCorrer = 20;
 
     public bool estoyAgachado;
 
@@ -30,7 +30,7 @@ public class Character_Controler : MonoBehaviour
 
         velocidadInicial = VelocidadMovimiento;
         velocidadAgachado = VelocidadMovimiento * 0.5f;
-        velCorrer = 8f;
+        velCorrer = 5f;
 
     }
 
