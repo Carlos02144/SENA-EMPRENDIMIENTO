@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character_Controler : MonoBehaviour
+public class CharacterControler : MonoBehaviour
 {
     public float VelocidadMovimiento = 5.0f;
     public float VelocidadRotacion = 200.0f;
-    private Animator anim;
+    public Animator anim;
     public float x, y;
 
     //Correr

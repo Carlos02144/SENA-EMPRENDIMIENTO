@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class objetivosController : MonoBehaviour
 {
     public static objetivosController Instance { get; private set; }
-    public int numObjetivos;
+    public MisionController misionController;
 
 
     void Awake()
@@ -24,7 +24,7 @@ public class objetivosController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            numObjetivos--;
+            misionController.numeroObjetos--;
             Destroy(gameObject);
         }
     }

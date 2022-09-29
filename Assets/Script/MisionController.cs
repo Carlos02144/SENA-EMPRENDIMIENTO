@@ -7,48 +7,82 @@ using Unity.VisualScripting;
 using UnityEngine.UIElements;
 public class MisionController : MonoBehaviour
 {
-    public float tiempoCorrido;
-    public bool completado;
-    public TextMeshProUGUI textoRecuentoDeObjetivos;
-    public TextMeshProUGUI textoMision;
-    public GameObject panelBotones;
-    public Canvas canvas;
-    public int numObjetivos =1;
+    public bool onArea,accion, aceptarMision,completado;
+    public CharacterControler player;
+    public GameObject panelInteraccion, descripcionMision, recuentoObjetos;
+    public TextMeshProUGUI textoRecuento;
+    public GameObject[] objetosRecoger;
+    public float currentTime;
+    public int numeroObjetos;
+    public GameObject objetivo;
     void Start()
     {
+        numeroObjetos = objetosRecoger.Length;
+        textoRecuento.text = $"El numero de Objetos faltantes son: {numeroObjetos}";
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControler>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        numObjetivos = GameObject.FindGameObjectsWithTag("Objetivos").Length;
-        if (numObjetivos == 0)
+        //Acciones de Interracion <>
+        if (Input.GetKeyDown("e") && onArea)
         {
-            completado = true;
+            Vector3 lookTarget = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            player.gameObject.transform.LookAt(lookTarget);
+            panelInteraccion.SetActive(false);
+            descripcionMision.SetActive(true);
+            accion = true;
+
+            player.enabled = false;
         }
+        //</>
+        if (numeroObjetos <= 0) completado = true;
         if(completado)
         {
-            tiempoCorrido += Time.deltaTime;
-            textoRecuentoDeObjetivos.text = "Completaste la Mision!";
-            if(tiempoCorrido>=4)
+            textoRecuento.text = "Haz Completado con Exito la Mision!";
+            if(currentTime < 4)
             {
-                canvas.enabled = false;
+                currentTime += Time.deltaTime;
+                recuentoObjetos.SetActive(false);
+                
             }
-        }else{ textoRecuentoDeObjetivos.text = $"Obejtivos restantes: {numObjetivos}"; }
+        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            panelBotones.SetActive(true);
+            onArea = true;
+            if (!accion) panelInteraccion.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            panelBotones.SetActive(false);
+            onArea = false;
+            if (!accion) panelInteraccion.SetActive(false);
         }
+    }
+    public void No()
+    { 
+        player.enabled = true;
+        accion = false;
+        descripcionMision.SetActive(false);
+        panelInteraccion.SetActive(true);
+    }
+    public void Si()
+    {
+        aceptarMision = true;
+        for(int i = 0; i< objetosRecoger.Length; i++)
+        {
+            objetosRecoger[i].SetActive(true);
+        }
+        onArea = false;
+        recuentoObjetos.SetActive(true);
+
     }
 }

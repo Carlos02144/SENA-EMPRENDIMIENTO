@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LogicaPies : MonoBehaviour
 {
-    public Character_Controler logicaPersonaje1;
+    public CharacterControler logicaPersonaje1;
     // Start is called before the first frame update
     void Start()
     {

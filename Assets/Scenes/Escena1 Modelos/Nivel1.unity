@@ -1431,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824215251}
   m_LocalRotation: {x: -0.16074158, y: -0.00344538, z: 0.00056111574, w: -0.9869904}
-  m_LocalPosition: {x: 0, y: 1.57, z: -0.9}
+  m_LocalPosition: {x: -0.01, y: 1.04, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1486,7 +1486,7 @@ MonoBehaviour:
     FieldOfView: 67.09
     OrthographicSize: 10
     NearClipPlane: 0.001
-    FarClipPlane: 5000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -1507,7 +1507,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845925733}
-  m_LocalRotation: {x: -0.015500152, y: -0.00608736, z: -0.00009436807, w: 0.99986136}
+  m_LocalRotation: {x: 0.13119571, y: 0.003069248, z: -0.00040618505, w: 0.99135166}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1619,6 +1619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911596723}
   - component: {fileID: 911596722}
+  - component: {fileID: 911596724}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -1651,7 +1652,7 @@ MonoBehaviour:
     FieldOfView: 67.09
     OrthographicSize: 10
     NearClipPlane: 0.001
-    FarClipPlane: 5000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -1748,6 +1749,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911596724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911596721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!4 &919574766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 42eb61bd6a59d154fb9a0b9aabed9fa8, type: 3}
@@ -1804,7 +1835,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.001
-  far clip plane: 5000
+  far clip plane: 100
   field of view: 67.09
   orthographic: 0
   orthographic size: 10
@@ -1830,7 +1861,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.048583373, y: -0.006080903, z: -0.00029578555, w: 0.99880064}
+  m_LocalRotation: {x: 0.098313734, y: 0.0030809424, z: -0.00030437508, w: 0.9951507}
   m_LocalPosition: {x: 0, y: 1.49, z: -1.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2435,7 +2466,7 @@ MonoBehaviour:
     FieldOfView: 67.09
     OrthographicSize: 10
     NearClipPlane: 0.001
-    FarClipPlane: 5000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -2456,7 +2487,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398399136}
-  m_LocalRotation: {x: -0.08132663, y: -0.006067924, z: -0.0004951331, w: 0.99666893}
+  m_LocalRotation: {x: 0.06561115, y: 0.0030892855, z: -0.00020313023, w: 0.99784046}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2718,7 +2749,7 @@ MonoBehaviour:
     FieldOfView: 67.09
     OrthographicSize: 10
     NearClipPlane: 0.001
-    FarClipPlane: 5000
+    FarClipPlane: 100
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -2739,7 +2770,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793932164}
-  m_LocalRotation: {x: -0.04858337, y: -0.0060809026, z: -0.00029578552, w: 0.9988006}
+  m_LocalRotation: {x: 0.09831375, y: 0.0030809597, z: -0.0003043767, w: 0.9951507}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
