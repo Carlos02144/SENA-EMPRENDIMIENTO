@@ -41,19 +41,21 @@ public class MisionController : MonoBehaviour
         if (numeroObjetos <= 0) completado = true;
         if(completado)
         {
+            
             textoRecuento.text = "Haz Completado con Exito la Mision!";
-            if(currentTime < 4)
+            if (currentTime < 4)
             {
                 currentTime += Time.deltaTime;
-                recuentoObjetos.SetActive(false);
-                
+                recuentoObjetos.SetActive(true);
+
             }
+            else recuentoObjetos.SetActive(false);
         }
         
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !completado)
         {
             onArea = true;
             if (!accion) panelInteraccion.SetActive(true);
@@ -77,10 +79,7 @@ public class MisionController : MonoBehaviour
     public void Si()
     {
         aceptarMision = true;
-        for(int i = 0; i< objetosRecoger.Length; i++)
-        {
-            objetosRecoger[i].SetActive(true);
-        }
+       
         onArea = false;
         recuentoObjetos.SetActive(true);
 
