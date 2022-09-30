@@ -1464,20 +1464,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 632283266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d8c0a20785a6d42b912e2daa5b7412, type: 3}
+  m_Script: {fileID: 11500000, guid: 73f2e0a0057afee409e004c9a635ab2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocidadMovimiento: 2
+  VelocidadMovimiento: 5
   VelocidadRotacion: 200
+  anim: {fileID: 632283272}
   x: 0
   y: 0
-  velCorrer: 0
+  velCorrer: 20
   estoyAgachado: 0
   rb: {fileID: 632283268}
-  fuerzaDeSalto: 9
+  fuerzaDeSalto: 10
   PuedoSaltar: 0
   velocidadInicial: 0
   velocidadAgachado: 0
+--- !u!95 &632283272 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 42eb61bd6a59d154fb9a0b9aabed9fa8, type: 3}
+  m_PrefabInstance: {fileID: 607173816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

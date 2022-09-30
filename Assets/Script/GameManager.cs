@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleCollsion();
+       //HandleCollsion();
         GameState();
     }
     void GameState()
@@ -26,22 +26,22 @@ public class GameManager : MonoBehaviour
             currentTime += Time.deltaTime;
             if(currentTime >6)
             {
-                PuertaController.Instance.setAnimation("Close");
+                //POner la animacion de cerrar close set
                 currentTime = 0;
                 open = false;
             }
         }
     }
-    void HandleCollsion()
+/*    void HandleCollsion()
     {
         //Colision contra un boton
         if (BotonController.Instance.collision)
         { 
             if(Input.GetKeyDown("e"))
             {
-                PuertaController.Instance.setAnimation("Open");
+                //pOner la animacion abrir puerta set
                 open = true;
             }
         }
-    }
+    }*/
 }

@@ -27,7 +27,7 @@ public class MisionController : MonoBehaviour
     void Update()
     {
         //Acciones de Interracion <>
-        if (Input.GetKeyDown("e") && onArea)
+        if (Input.GetKeyDown("e") && onArea && player.PuedoSaltar == true)
         {
             Vector3 lookTarget = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             player.gameObject.transform.LookAt(lookTarget);
