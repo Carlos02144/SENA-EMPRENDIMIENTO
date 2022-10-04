@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 <<<<<<< HEAD:Assets/Scenes/Nivel 0  Modelos/Script.meta
 guid: 49c2e8df93db634488816d105835cbe1
 =======
 guid: e688a25ab47236d41a24c816c88c0326
 >>>>>>> 8148a3bd36932edd158a82e6dd13b7df609f1121:Assets/Scenes/Escena1 Modelos/Script.meta
+=======
+guid: bf8b450d636521e499b6b74878cea90f
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
