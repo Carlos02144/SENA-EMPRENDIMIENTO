@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleCollsion();
+       //HandleCollsion();
         GameState();
     }
     void GameState()
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void HandleCollsion()
+ /*void HandleCollsion()
     {
         //Colision contra un boton
         if (BotonController.Instance.collision)
@@ -43,23 +43,7 @@ public class GameManager : MonoBehaviour
                 open = true;
             }
         }
-<<<<<<< Updated upstream:Assets/Scenes/Escena1 Modelos/Script/GameManager.cs
-=======
-<<<<<<< HEAD:Assets/Scenes/Nivel 0  Modelos/Script/GameManager.cs
-<<<<<<< HEAD:Assets/Script/GameManager.cs
+
     }*/
 } 
-=======
-    }
-}
->>>>>>> 8148a3bd36932edd158a82e6dd13b7df609f1121:Assets/Scenes/Escena1 Modelos/Script/GameManager.cs
-=======
-<<<<<<<< HEAD:Assets/Script/GameManager.cs
-    }*/
-} 
-========
->>>>>>> Stashed changes:Assets/Scenes/Nivel 0  Modelos/Script/GameManager.cs
-    }
-}
->>>>>>>> 8148a3bd36932edd158a82e6dd13b7df609f1121:Assets/Scenes/Nivel 0  Modelos/Script/GameManager.cs
->>>>>>> 8148a3bd36932edd158a82e6dd13b7df609f1121:Assets/Scenes/Escena1 Modelos/Script/GameManager.cs
+
