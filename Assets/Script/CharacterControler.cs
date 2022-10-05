@@ -43,7 +43,8 @@ public class CharacterControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         x= Input.GetAxis("Horizontal");
         y= Input.GetAxis("Vertical");
 
