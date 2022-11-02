@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PuertaController : MonoBehaviour
 {
-
-    private void Update()
+    public static PuertaController Instance{ get; private set; }
+    public Animator animator;
+    
+    void Awake()
     {
-        if(BotonController.Instance.videoEnd == true)
-        {
-            print("no");     
-            Destroy(gameObject);
-        }   
+        Instance = this;
+    }
+    public void setAnimation(string name)
+    {
+        animator.Play(name);
     }
 
 }

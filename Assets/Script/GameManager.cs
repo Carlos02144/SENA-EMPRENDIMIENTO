@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public GameState gameState = GameState.Ready;
     public float currentTime;
-
+    bool open =false;
     bool action;
 
     void Start()
@@ -29,7 +29,16 @@ public class GameManager : MonoBehaviour
     void GameStateUpdate()
     {
         if (gameState == GameState.Ready && action) gameState = GameState.Playing;
-
+        if (open)
+        {
+            currentTime += Time.deltaTime;
+            if(currentTime >6)
+            {
+                //PuertaController.Instance.setAnimation("Close");
+                currentTime = 0;
+                open = false;
+            }
+        }
     }
 }
 
