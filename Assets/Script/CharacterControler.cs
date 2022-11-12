@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CharacterControler : MonoBehaviour
 {
     public float VelocidadMovimiento = 5.0f;
     public float VelocidadRotacion = 200.0f;
+    public float movimientoX,movimientoY,speedY,speedX;
     public Animator anim;
     public float x, y;
-
+    private Transform camara;
     //Correr
     public float velCorrer = 20;
 
@@ -25,6 +28,8 @@ public class CharacterControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camara = transform.Find("Camera");
+
         PuedoSaltar = false;
         anim = GetComponent<Animator>();
 
@@ -36,7 +41,7 @@ public class CharacterControler : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Rotate(0,x*Time.deltaTime * VelocidadRotacion,0);
+        
         transform.Translate(0,0,y*Time.deltaTime * VelocidadMovimiento);
     }
 
@@ -48,9 +53,21 @@ public class CharacterControler : MonoBehaviour
         x= Input.GetAxis("Horizontal");
         y= Input.GetAxis("Vertical");
 
+        movimientoX = Input.GetAxis("Mouse X");
+        movimientoY = Input.GetAxis("Mouse Y");
+
         anim.SetFloat("VelX" ,x);
         anim.SetFloat("VelY" ,y);
-
+        //Rotar personaje
+        if (movimientoX != 0) transform.Rotate(Vector3.up * movimientoX*Time.deltaTime*speedX);
+        //Mirar Arribar
+        if (movimientoY != 0)
+        {
+            float angles = (camara.eulerAngles.x - movimientoY * speedY + 360) % 360;
+            if(angles>180){ angles -= 360; }
+            angles = Math.Clamp(angles, -80, 80);
+            camara.localEulerAngles=Vector3.right * angles;
+        }
         //Correr
         if (Input.GetKey(KeyCode.LeftShift)&& !estoyAgachado &&PuedoSaltar)
         {

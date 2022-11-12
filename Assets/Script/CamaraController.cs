@@ -18,6 +18,7 @@ public class CamaraController : MonoBehaviour
         movimientoX += Input.GetAxis("Mouse X") * speedH;
         movimientoY -= Input.GetAxis("Mouse Y") * speedV;
 
+        
         transform.eulerAngles = new Vector3(movimientoY, movimientoX, 0f);
     }
 }
