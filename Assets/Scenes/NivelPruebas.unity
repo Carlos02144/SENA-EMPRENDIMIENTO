@@ -656,8 +656,8 @@ MonoBehaviour:
   VelocidadRotacion: 200
   movimientoX: 0
   movimientoY: 0
-  speedY: 0
-  speedX: 0
+  speedY: 5
+  speedX: 10
   anim: {fileID: 632283272}
   x: 0
   y: 0
