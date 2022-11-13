@@ -12,6 +12,7 @@ public class CharacterControler : MonoBehaviour
     public Animator anim;
     public float x, y;
     private Transform camara;
+    public bool OnPause;
     //Correr
     public float velCorrer = 20;
 
@@ -48,85 +49,88 @@ public class CharacterControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        x= Input.GetAxis("Horizontal");
-        y= Input.GetAxis("Vertical");
-
-        movimientoX = Input.GetAxis("Mouse X");
-        movimientoY = Input.GetAxis("Mouse Y");
-
-        anim.SetFloat("VelX" ,x);
-        anim.SetFloat("VelY" ,y);
-        //Rotar personaje
-        if (movimientoX != 0) transform.Rotate(Vector3.up * movimientoX*Time.deltaTime*speedX);
-        //Mirar Arribar
-        if (movimientoY != 0)
+        if (GameManager.Instance.gameState == GameState.Pause) OnPause = true; else OnPause = false;
+        if (!OnPause)
         {
-            float angles = (camara.eulerAngles.x - movimientoY * speedY + 360) % 360;
-            if(angles>180){ angles -= 360; }
-            angles = Math.Clamp(angles, -80, 80);
-            camara.localEulerAngles=Vector3.right * angles;
-        }
-        //Correr
-        if (Input.GetKey(KeyCode.LeftShift)&& !estoyAgachado &&PuedoSaltar)
-        {
-            
-            if (y > 0)
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+
+            movimientoX = Input.GetAxis("Mouse X");
+            movimientoY = Input.GetAxis("Mouse Y");
+
+            anim.SetFloat("VelX", x);
+            anim.SetFloat("VelY", y);
+            //Rotar personaje
+            if (movimientoX != 0) transform.Rotate(Vector3.up * movimientoX * Time.deltaTime * speedX);
+            //Mirar Arribar
+            if (movimientoY != 0)
             {
-                anim.SetBool("Correr", true);
+                float angles = (camara.eulerAngles.x - movimientoY * speedY + 360) % 360;
+                if (angles > 180) { angles -= 360; }
+                angles = Math.Clamp(angles, -80, 80);
+                camara.localEulerAngles = Vector3.right * angles;
+            }
+            //Correr
+            if (Input.GetKey(KeyCode.LeftShift) && !estoyAgachado && PuedoSaltar)
+            {
+
+                if (y > 0)
+                {
+                    anim.SetBool("Correr", true);
+                }
+                else
+                {
+                    anim.SetBool("Correr", false);
+                }
+                velocidadInicial = velCorrer;
             }
             else
             {
                 anim.SetBool("Correr", false);
-            }
-            velocidadInicial = velCorrer;
-        }
-        else
-        {
-            anim.SetBool("Correr", false);
-            
-            if (estoyAgachado)
-            {
-                //Mover
-                VelocidadMovimiento = velocidadAgachado;
-            }
-            else if (PuedoSaltar)
-            {
-                //Mover
-                VelocidadMovimiento = velocidadInicial;
-            }
-        }
 
-        if (PuedoSaltar)
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetBool("Salte",true);
-                rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+                if (estoyAgachado)
+                {
+                    //Mover
+                    VelocidadMovimiento = velocidadAgachado;
+                }
+                else if (PuedoSaltar)
+                {
+                    //Mover
+                    VelocidadMovimiento = velocidadInicial;
+                }
             }
 
-            if(Input.GetKey(KeyCode.LeftControl))
+            if (PuedoSaltar)
             {
-              anim.SetBool("Agachado",true);
-              //VelocidadMovimiento = velocidadAgachado;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    anim.SetBool("Salte", true);
+                    rb.AddForce(new Vector3(0, fuerzaDeSalto, 0), ForceMode.Impulse);
+                }
+
+                if (Input.GetKey(KeyCode.LeftControl))
+                {
+                    anim.SetBool("Agachado", true);
+                    //VelocidadMovimiento = velocidadAgachado;
+                }
+                else
+                {
+                    anim.SetBool("Agachado", false);
+                    VelocidadMovimiento = velocidadInicial;
+                }
+                anim.SetBool("TocoSuelo", true);
             }
+
+
             else
             {
-                anim.SetBool("Agachado", false);
-                VelocidadMovimiento = velocidadInicial;
+                EstoyCayendo();
             }
-            anim.SetBool("TocoSuelo", true);    
-        }
-       
+            velocidadInicial = 2;
 
-        else
-        {
-            EstoyCayendo();
         }
-        velocidadInicial = 2;
-
-        
     }
     public void EstoyCayendo()
         {
