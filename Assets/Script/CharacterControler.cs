@@ -42,8 +42,11 @@ public class CharacterControler : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-        transform.Translate(0,0,y*Time.deltaTime * VelocidadMovimiento);
+        //Moviemiento del Personaje Vertical
+        transform.Translate(0, 0, y * Time.deltaTime * VelocidadMovimiento);
+        //Moviemiento del Personaje Horizontal
+        transform.Translate(x*Time.deltaTime * VelocidadMovimiento, 0,0);
+
     }
 
     // Update is called once per frame
@@ -72,6 +75,7 @@ public class CharacterControler : MonoBehaviour
                 angles = Math.Clamp(angles, -80, 80);
                 camara.localEulerAngles = Vector3.right * angles;
             }
+            
             //Correr
             if (Input.GetKey(KeyCode.LeftShift) && !estoyAgachado && PuedoSaltar)
             {
