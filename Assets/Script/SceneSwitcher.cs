@@ -13,7 +13,7 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void StartScene()
     {
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene("Lobby");
         start = false;
     }
     public void ExitGame()
