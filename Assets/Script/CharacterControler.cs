@@ -52,6 +52,7 @@ public class CharacterControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speedX = LogicaMouseSensibility.Instance.sliderValue;
         if (GameManager.Instance.gameState == GameState.Pause) OnPause = true; else OnPause = false;
         if (!OnPause)
         {
@@ -75,7 +76,7 @@ public class CharacterControler : MonoBehaviour
                 angles = Math.Clamp(angles, -80, 80);
                 camara.localEulerAngles = Vector3.right * angles;
             }
-            
+
             //Correr
             if (Input.GetKey(KeyCode.LeftShift) && !estoyAgachado && PuedoSaltar)
             {
@@ -134,6 +135,11 @@ public class CharacterControler : MonoBehaviour
             }
             velocidadInicial = 2;
 
+        }
+        else 
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     public void EstoyCayendo()

@@ -30,9 +30,7 @@ public class GameManager : MonoBehaviour
         {
             menuPausa.SetActive(true);
             gameState = GameState.Pause;
-            Debug.Log("Escape");
             escape = true;
-            Cursor.visible = true;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && gameState == GameState.Pause && escape == true)
         {
