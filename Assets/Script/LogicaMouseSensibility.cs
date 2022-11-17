@@ -15,7 +15,7 @@ public class LogicaMouseSensibility : MonoBehaviour
     }
     private void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("mouseSensibility", 10);
+        slider.value = PlayerPrefs.GetFloat("mouseSensibility", 60);
         sliderValue = slider.value;
     }
     // Update is called once per frame
