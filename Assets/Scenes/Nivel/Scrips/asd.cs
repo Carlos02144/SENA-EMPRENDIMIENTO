@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reaparicion5 : MonoBehaviour
+public class asd : MonoBehaviour
 {
     public Transform Target;
     public GameObject ThePlayer;
@@ -12,9 +12,9 @@ public class Reaparicion5 : MonoBehaviour
     {
         ThePlayer.transform.position = Target.transform.position;
 
-        if (transform.position.y >= 37.73f)
+        if (transform.position.y >= -5.53)
         {
-            
+
         }
 
     }

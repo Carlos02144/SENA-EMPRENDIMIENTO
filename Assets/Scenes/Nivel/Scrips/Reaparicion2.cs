@@ -14,7 +14,7 @@ public class Reaparicion2 : MonoBehaviour
 
         if (transform.position.y >= 21.05)
         {
-            Destroy(this.Nivel1);
+            
         }
 
     }
