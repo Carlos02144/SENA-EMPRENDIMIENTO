@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public GameState gameState = GameState.Playing;
     public static GameManager Instance { get; private set; }
     public GameObject menuPausa;
-    public bool escape;
+    public bool escape, onConfig;
+
     void Awake()
     {
         Instance = this;
@@ -26,18 +27,23 @@ public class GameManager : MonoBehaviour
     {
         
         
-        if (Input.GetKeyDown(KeyCode.Escape) && escape == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && escape == false && onConfig==false)
         {
             menuPausa.SetActive(true);
             gameState = GameState.Pause;
             escape = true;
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && gameState == GameState.Pause && escape == true)
+        else if(Input.GetKeyDown(KeyCode.Escape) && gameState == GameState.Pause && escape == true && onConfig==false)
         {
             menuPausa.SetActive(false);
             gameState=GameState.Playing;
             escape = false;
+            onConfig = false;
         }
+    }
+    public void OnConfig(bool On)
+    {
+        onConfig = On;
     }
 }
 
