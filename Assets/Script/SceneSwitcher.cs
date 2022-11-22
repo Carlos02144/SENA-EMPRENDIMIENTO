@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     public bool start;
+    public string nameScene;
     public static SceneSwitcher Instance { get; set; }
     void Awake()
     {
@@ -13,7 +14,7 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void StartScene()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene(nameScene);
         start = false;
     }
     public void ExitGame()

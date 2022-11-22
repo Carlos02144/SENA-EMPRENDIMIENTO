@@ -22,13 +22,6 @@ public class TpPrueba : MonoBehaviour
     {
         player.position = new Vector3(x,y,z);
 
-        if (other.tag == "Player")
-        {
-            PlayerPrefs.SetInt("Nivel1", 2);
-            SceneManager.LoadScene("Lobby");
-
-        }
-
     }
 
     

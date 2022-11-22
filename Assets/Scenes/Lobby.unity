@@ -6416,6 +6416,7 @@ GameObject:
   - component: {fileID: 866103056}
   - component: {fileID: 866103055}
   - component: {fileID: 866103054}
+  - component: {fileID: 866103058}
   m_Layer: 0
   m_Name: lobbyalnivel1
   m_TagString: Untagged
@@ -6514,6 +6515,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866103052}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &866103058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866103052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896d0c4059e2d274aaf19b577ad33e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  nameScene: Nivel1
 --- !u!1001 &879773671
 PrefabInstance:
   m_ObjectHideFlags: 0
